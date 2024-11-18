@@ -1,32 +1,24 @@
 from operator import index
 
+
 import pandas as pd
 import numpy as np
-from pandas import DataFrame, Series, date_range
+import matplotlib
+import matplotlib.pyplot as plt
 
-# a = pd.Series([5,6,7,8])
-# b = pd.Series([5,6,7,8], index = ['a','b','c', 'd'])
-# c = pd.date_range('01.01.2010','10.01.2010')
-# e = pd.date_range('2010-04-01','2010-04-06')
 
-dates = pd.date_range('2010-01-01','2010-01-05')
+df = pd.read_csv(r'c:\ML\LearningPandas\Data\goog.csv', parse_dates=['Date'])
+print(df[0:1])
+df = pd.read_csv(r'c:\ML\LearningPandas\Data\goog.csv', parse_dates=['Date'], index_col=['Date'])
+# print(df.columns)
+# print(type(df.Date.[0]))
+temps2 = pd.Series([78,175,69,79,77])
 
-temps1 = pd.Series([80,82,85,90,83], index = dates )
-temps2 = pd.Series([78,175,69,79,77], index = dates  )
 
-diff_temp = temps1 - temps2
-# print(temps1 - temps2)
-
-temp_ds = pd.DataFrame(
-    {'Msk': temps1,
-     'Spb': temps2}
-)
-cols = ['Msk','Spb']
-# print(temp_ds)
-temp_ds['Diff'] = temp_ds.Msk - temp_ds.Spb
-# print(temp_ds.iloc[[1,3]])
-print(temp_ds)
-print(temp_ds[temp_ds.Msk > 83])
-# print()
-# print(type(temp_ds.loc['2010-01-04']))
-# print(temp_ds.loc['2010-01-04'].iloc[1])
+# print(df[0:1])
+# print(type(df.Date[0]))
+# print(df.index)
+# print(df.columns)
+# print(df[df.Date == '2017-03-16'])
+df.Close.plot()
+plt.show()
