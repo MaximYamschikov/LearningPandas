@@ -45,6 +45,8 @@ print(round(len(user_session[user_session['date_m'] ==  pd.to_datetime('2023-03-
 
 
 
+
+
 # print(user['last_visited'].dt.to_period('M').dt.to_timestamp())
 # print((user['last_visited_m'] == pd.to_datetime('2023-09-01')) & ())
 # date = pd.to_datetime('2018-08-25')
